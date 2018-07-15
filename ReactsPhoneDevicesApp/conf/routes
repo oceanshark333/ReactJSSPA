@@ -1,0 +1,12 @@
+# Routes
+
+GET 	/linkForm				   controllers.BasicController.linkForm
+POST 	/linkForm				   controllers.BasicController.linkFormPost
+
+GET    /phone/:ourId					controllers.Relative.phone(ourId)
+
+GET     /svtake/:ourId						controllers.Relative.svtake(ourId)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

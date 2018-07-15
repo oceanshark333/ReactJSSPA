@@ -1,0 +1,22 @@
+@import helper._
+@(items: scala.collection.mutable.Map[String, String])(implicit messages: Messages)
+
+@main("Scala  Link App") {
+    <h1> App List </h1>
+
+  <ul>
+  @for(elem <- items.keys){
+    @defining(elem.length > 0 ) { isChecked =>
+                @if(isChecked) {
+                   <li> @elem  <span>@items.get(elem)</span> <span>http://localhost:9000/phone/@items.get(elem)</span> </li>
+                  
+                } else {
+                    <li> @elem  <span>@items.get(elem)</span> </li>
+                }
+            }
+  
+  }
+
+	</ul>
+  
+}
